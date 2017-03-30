@@ -1,0 +1,175 @@
+// ---------- HEADER WITH NAV ----------
+
+.icons_sprite {
+   background: url("/assets/a-little-bit_icons_50x226.png") no-repeat;
+}
+
+header {
+  div, nav, li, .bulb, .shopping_cart {
+    display: inline-block;
+    font-family: verdana; 
+  }
+  .bulb {
+    width: 112.5px;
+    height: 112.5px;
+    background-position: 28px 0px; 
+    background-size: 50%; 
+    background-color: $pink; 
+    border-radius: 112.5px;
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+  .logo {
+    vertical-align: bottom;
+  }
+  .logo_img {
+    margin-top: 60px;
+  }
+  .icon-hamburger {
+    display: none; 
+  }
+  nav {
+    ul {
+      padding-left: 0;
+      li {
+        margin-right: 1.8em;
+        margin-top: 1em;
+        margin-left: 0em;
+        font-size: 17px;
+        color: black;
+      }
+      li:hover {
+        color: $pink; 
+      }
+      #cart {
+        display: none;
+      }
+    }
+  }
+  .cart {
+    height: 40px;
+    width: 6em;
+    background-color: $middle_grey; 
+    border-radius: 0.3em;
+    margin-top: 50px;
+    padding: 0.5em;
+    .shopping_cart {
+      width: 40px;
+      height: 40px;
+      background-position: 0px -112px;
+      float: right;
+    }
+    .number_div {
+      background-color: $light_grey; 
+      height: 1.6em;
+      width: 1.6em;
+      border-radius: 1.6em; 
+      .number {
+        color: black;
+        display: table-cell;
+        padding-left: 0.5em;
+        padding-top: 0.2em;
+      }
+    }
+  }
+}
+
+
+
+// ---------- HAMBURGER MENU ----------
+
+@media screen and (max-width: 1023px) {
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    /* adds animation for all transitions */
+    
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+    padding: 0;
+    -webkit-text-size-adjust: none;
+  }
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+  header .icon-hamburger {
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    width: 24px;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 95%;
+    background: $dark_grey;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* actual page content pane */
+
+  .content {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  .menu {
+    background-color: $pink;
+    height: 450px;
+    width: 100%;
+/*    position: fixed;*/
+    top: -450px;
+    left: 0;
+    z-index: 1;
+    .icon-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      cursor: pointer;
+      vertical-align: middle;
+      width: 24px;
+    }
+    ul {
+      margin-top: 14px !important;
+      li {
+        width: 100%;
+        text-align: center;
+      }
+      li:hover {
+        color: white;
+      }
+      #cart {
+        display: block;
+        .cart {
+          margin-top: 0px;
+          height: 45px;
+        }
+      }
+    }
+    .menu-item {
+      font-size: 18px;
+      padding: 10px;
+      list-style: none !important;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+  .shopping-cart {
+    display: none;
+  }
+}

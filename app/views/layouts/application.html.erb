@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ALittleBitOfKnowledge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+  </head>
+
+  <body>
+
+    <div class="grid content">
+
+      <div class="grey_line"></div>
+
+      <div class="row">
+        <div class="guide">
+          <div class="guide1 column column-1-of-8-desktop"></div><!--
+          --><div class="guide1 column column-1-of-8-desktop"></div><!--
+          --><div class="guide1 column column-1-of-8-desktop"></div><!--
+          --><div class="guide1 column column-1-of-8-desktop"></div><!--
+          --><div class="guide1 column column-1-of-8-desktop"></div><!--
+          --><div class="guide1 column column-1-of-8-desktop"></div><!--
+          --><div class="guide1 column column-1-of-8-desktop"></div><!--
+          --><div class="guide1 column column-1-of-8-desktop"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <header>
+          <div class="logo column column-3-of-8-desktop">
+            <a><!--
+              --><div class="icons_sprite bulb"></div>
+              <div class="logo_img"><img src="/assets/alb-logotype.png"></div>
+            </a><!--
+            --> <img class="icon-hamburger" src="/assets/hamburger-icon.svg"><!--
+          --></div><!--
+
+          --><nav class="column column-4-of-8-desktop menu">
+            <!-- Menu icon -->
+            <div class="icon-close">
+              <img src="/assets/close-icon.svg">
+            </div>
+
+            <!-- Menu -->
+            <ul><!--
+              --><a href="#"><li class="menu-item">HOME</li></a>
+              <a href="#"><li class="menu-item">SHOP</li></a>
+              <a href="#"><li class="menu-item">PRESS</li></a>
+              <a href="#"><li class="menu-item">ABOUT</li></a>
+              <a href="#"><li class="menu-item">HELP</li></a>
+              <a href="#"><li class="menu-item" id="cart">
+                <div class="cart">
+                  <div class="number_div">
+                    <span class="number">0</span>
+                  </div>
+                  <span class="icons_sprite shopping_cart"></span>
+                </div>
+              </li></a><!--
+            --></ul><!--
+          --></nav><!--
+
+          --><div class="column column-1-of-8-desktop cart_div">
+            <a href="#">
+              <div class="cart shopping-cart">
+                <div class="number_div">
+                  <span class="number">0</span>
+                </div>
+                <span class="icons_sprite shopping_cart"></span>
+              </div>
+            </a>
+          </div>
+        </header>
+      </div>
+
+      <%= yield %>
+
+      <footer>
+        <ul class="column offset-4-of-8-desktop column-4-of-8-desktop">
+            <li class="social-media-icon"><a>
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a></li><!--
+            --><li class="social-media-icon"><a>
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a></li><!--
+            --><li class="social-media-icon"><a>
+              <i class="fa fa-google-plus" aria-hidden="true"></i>
+            </a></li><!--
+            --><li class="social-media-icon"><a>
+              <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            </a></li>
+        </ul>
+        <p class="column offset-4-of-8-desktop column-4-of-8-desktop copyright"> &#169; Copyright 2013, a Little Bit &trade;</p>
+      </footer>
+
+    </div>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  </body>
+
+</html>

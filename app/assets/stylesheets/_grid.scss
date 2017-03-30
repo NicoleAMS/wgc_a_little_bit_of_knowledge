@@ -1,0 +1,104 @@
+@import "mixins";
+
+.guide {
+  position: fixed; 
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  display: none;
+  .column {
+    background: rgba(251, 70, 202, 0.3);
+    height: 1000px;
+  } 
+}
+
+/*Global reset and box-sizing rule. This will make sure that padding applied to our elements is added 
+  within their calculated dimensions, giving us far more freedom for defining column widths. */
+*, *:after, *:before {
+
+  @include border-box; 
+}
+
+/* Next we'll add a rule to make sure any images used behave fluidly.*/
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto !important; 
+}
+
+/*Now some rules to make sure our grid element behaves itself. Bear in mind we're working mobile first. 
+  Our container starts out at 100% viewport width, but we'll alter that for larger screens.*/
+.grid {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*All our row elements do is contain the columns, making sure that groups of columns clear each other 
+  properly. Let's add some general .clearfix rules to our grid and row elements.*/
+.grid:after, .row:after {
+  content: "";
+  display: table;
+  clear: both; 
+}
+
+/*All our column elements will float left, will have a padding of 1em (this forms our gutter and some 
+  vertical space) and will fill 100% of the viewport width (again, we're working mobile first here). 
+  Lastly, the min-height: 1px makes sure that the column displays properly, even if it has no content.*/
+.column {
+  float: left;
+  padding: 1em;
+  width: 100%;
+  min-height: 1px; 
+}
+
+
+/*SASS variables*/
+/*grid variables*/
+$grid-columns: 8;
+$grid-max-width: 1040px;
+ 
+ 
+/*A media query to give us a different layout for larger screens*/
+@media screen and (min-width: $desktop) {
+
+  .grid {
+    width: 95%;
+    max-width: $grid-max-width; 
+
+    .column {
+
+      @for $i from 1 through $grid-columns {
+     
+        &.column-#{$i}-of-#{$grid-columns}-desktop { 
+            width: (100% / $grid-columns) * $i;
+        }
+
+        &.offset-#{$i}-of-#{$grid-columns}-desktop {
+          margin-left: 12.5% * $i;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) and (max-width: $tablet2) {
+
+  .grid {
+    width: 95%;
+    max-width: $grid-max-width; 
+
+    .column {
+
+      @for $i from 1 through $grid-columns {
+     
+        &.column-#{$i}-of-#{$grid-columns}-tablet { 
+            width: (100% / $grid-columns) * $i;
+        }
+
+        &.offset-#{$i}-of-#{$grid-columns}-tablet {
+          margin-left: 12.5% * $i;
+        }
+      }
+    }
+  }
+}
