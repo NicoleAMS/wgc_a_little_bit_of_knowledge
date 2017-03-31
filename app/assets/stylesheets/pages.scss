@@ -1,0 +1,107 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  height: 425px;
+  background-color: white;
+  border-bottom: 1px solid $dark_grey;
+}
+.jumbotron {
+  height: 400px;
+  background-color: $blue;
+  color: white;
+  margin-top: 30px;
+  position: relative;
+  .title {
+    position: absolute;
+    z-index: 10;
+    font-family: serif;
+    h1 {
+      font-size:48px; 
+      font-weight: inherit;
+      margin: 0;
+    }
+    p {
+      color: $light-blue;
+      font-size: 20px; 
+      font-style: italic;
+      margin-top: 10px;
+    }
+  }
+  .circles-container {
+    padding: 0;
+    overflow: hidden;
+    width: 500px;
+    height: 400px;
+    .outer-circle {
+      background: $outer-circle-blue;
+      border-radius: 50%;
+      height: 500px;
+      width: 500px;
+      position: relative;
+      top: -30px;
+      left: -60px;
+      .middle-circle {
+        background: $middle-circle-blue;
+        position: absolute;
+        border-radius: 50%;
+        height: 300px;
+        width: 300px;
+        top: 50%;
+        left: 50%;
+        margin: -150px 0px 0px -150px;
+        .inner-circle {
+          position: absolute;
+          background: $inner-circle-blue;
+          border-radius: 50%;
+          height: 200px;
+          width: 200px;
+          top: 50%;
+          left: 50%;
+          margin: -100px 0px 0px -100px;
+        }
+      }
+    }
+  }
+  .blockquote {
+    padding-left: 0;
+    margin-top: 50px;
+    blockquote {
+      margin-left: 0;
+      .homepage-quote {
+        color: $light-blue;
+      }
+      .quotation-mark {
+        color: $dark-blue;
+        font-size: 80px;
+        font-family: serif;
+        padding: 0;
+        margin-bottom: 0px;
+        margin-top: 20px;
+      }
+      .homepage-cite {
+        font-style: initial;
+      }
+    }
+    .more-button {
+      display: inline-block;
+      color: white;
+      background-color: $pink;
+      padding: 5px 10px;
+      border-radius: 6px;
+      position: absolute;
+      top: 300px;
+      right: 100px;
+      &:hover {
+        color: $pink;
+        background-color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.main-homepage {
+  height: 400px;
+}
