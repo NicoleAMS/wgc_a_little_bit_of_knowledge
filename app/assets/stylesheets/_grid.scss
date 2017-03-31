@@ -102,3 +102,25 @@ $grid-max-width: 1040px;
     }
   }
 }
+
+@media screen and (max-width: $phone2) {
+
+  .grid {
+    width: 95%;
+    max-width: $grid-max-width; 
+
+    .column {
+
+      @for $i from 1 through $grid-columns {
+     
+        &.column-#{$i}-of-#{$grid-columns}-phone { 
+            width: (100% / $grid-columns) * $i;
+        }
+
+        &.offset-#{$i}-of-#{$grid-columns}-phone {
+          margin-left: 12.5% * $i;
+        }
+      }
+    }
+  }
+}
