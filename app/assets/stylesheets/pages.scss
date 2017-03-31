@@ -29,6 +29,17 @@
       margin-top: 10px;
     }
   }
+  .book-image {
+    position: absolute;
+    z-index: 10;
+    width: 200px;
+    -ms-transform: rotate(350deg); /* IE 9 */
+    -webkit-transform: rotate(350deg); /* Chrome, Safari, Opera */
+    transform: rotate(350deg);
+    top: 100px;
+    left: 125px;
+    /*box-shadow: -5px 5px 5px $dark_grey;*/
+  }
   .circles-container {
     padding: 0;
     overflow: hidden;
@@ -84,7 +95,8 @@
         font-style: initial;
       }
     }
-    .more-button {
+    .more-button a {
+      text-decoration: none;
       display: inline-block;
       color: white;
       background-color: $pink;
