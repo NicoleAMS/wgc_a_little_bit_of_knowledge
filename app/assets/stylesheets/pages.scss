@@ -2,118 +2,207 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// ---------- CAROUSEL ANIMATION ----------
+
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  .panes {
+    padding-left: 0;
+    list-style: none;
+    position: relative;
+    width: 300%; /* Number of panes * 100% */
+    overflow: hidden; /* This is used solely to clear floats, it does not add functionality. */
+        
+    -moz-animation:carousel 25s infinite;
+    -webkit-animation:carousel 25s infinite;
+    animation:carousel 25s infinite;
+    li {
+      position: relative;
+      float: left;
+      width: 33.33333333%; /* 100 / number of panes */
+    }
+  }
+}
+
+@keyframes carousel{
+    0%    { left:0; }
+    15.15%{ left:0; }
+    16.65%{ left:0%; }
+    31.8% { left:0%; }
+    33.3% { left:-100%; }
+    50%   { left:-100%; }
+    51.5% { left:-100%; }
+    65.2% { left:-100%; }
+    66.7% { left:-200%; }
+    81.85%{ left:-200%; }
+    83.35%{ left:-200%; }
+    98.5% { left:-200%; }
+    100%  { left:0; }
+}
+
+// ---------- CAROUSEL PANES ----------
 .container {
   height: 425px;
   background-color: white;
   border-bottom: 1px solid $dark_grey;
-}
-.jumbotron {
-  height: 400px;
-  background-color: $blue;
-  color: white;
-  margin-top: 30px;
-  position: relative;
-  .title {
-    position: absolute;
-    z-index: 10;
-    font-family: serif;
-    h1 {
-      font-size:48px; 
-      font-weight: inherit;
-      margin: 0;
-    }
-    p {
-      color: $light-blue;
-      font-size: 20px; 
-      font-style: italic;
-      margin-top: 10px;
-    }
+
+  #blue-jumbotron {
+    background-color: $blue;
   }
-  .book-image {
-    position: absolute;
-    z-index: 10;
-    width: 200px;
-    -ms-transform: rotate(350deg); /* IE 9 */
-    -webkit-transform: rotate(350deg); /* Chrome, Safari, Opera */
-    transform: rotate(350deg);
-    top: 100px;
-    left: 125px;
-    /*box-shadow: -5px 5px 5px $dark_grey;*/
+  #green-jumbotron {
+    background-color: $green;
   }
-  .circles-container {
-    padding: 0;
-    overflow: hidden;
-    width: 500px;
+  #red-jumbotron {
+    background-color: $red;
+  }  
+  .jumbotron {
     height: 400px;
-    .outer-circle {
-      background: $outer-circle-blue;
-      border-radius: 50%;
-      height: 500px;
+    color: white;
+    margin-top: 30px;
+    position: relative;
+    .title {
+      position: absolute;
+      z-index: 10;
+      font-family: serif;
+      h1 {
+        font-size:48px; 
+        font-weight: inherit;
+        margin: 0;
+      }
+      p {
+        font-size: 20px; 
+        font-style: italic;
+        margin-top: 10px;
+      }
+    }
+    .blue-text {
+      color: $light-blue;
+    }
+    .green-text {
+      color: $light-green;
+    }
+    .red-text {
+      color: $light-red;
+    }
+    .book-image {
+      position: absolute;
+      z-index: 10;
+      width: 200px;
+      -ms-transform: rotate(350deg); /* IE 9 */
+      -webkit-transform: rotate(350deg); /* Chrome, Safari, Opera */
+      transform: rotate(350deg);
+      top: 100px;
+      left: 125px;
+    }
+    .circles-container {
+      padding: 0;
+      overflow: hidden;
       width: 500px;
-      position: relative;
-      top: -30px;
-      left: -60px;
-      .middle-circle {
-        background: $middle-circle-blue;
-        position: absolute;
+      height: 400px;
+      #outer-circle-blue {
+        background: $outer-circle-blue;
+        #middle-circle-blue {
+          background: $middle-circle-blue;
+          #inner-circle-blue {
+            background: $inner-circle-blue;
+          }
+        }
+      }
+      #outer-circle-green {
+        background: $outer-circle-green;
+        #middle-circle-green {
+          background: $middle-circle-green;
+          #inner-circle-green {
+            background: $inner-circle-green;
+          }
+        }
+      }
+      #outer-circle-red {
+        background: $outer-circle-red;
+        #middle-circle-red {
+          background: $middle-circle-red;
+          #inner-circle-red {
+            background: $inner-circle-red;
+          }
+        }
+      }
+      .outer-circle {
         border-radius: 50%;
-        height: 300px;
-        width: 300px;
-        top: 50%;
-        left: 50%;
-        margin: -150px 0px 0px -150px;
-        .inner-circle {
+        height: 500px;
+        width: 500px;
+        position: relative;
+        top: -30px;
+        left: -60px;
+        .middle-circle {
           position: absolute;
-          background: $inner-circle-blue;
           border-radius: 50%;
-          height: 200px;
-          width: 200px;
+          height: 300px;
+          width: 300px;
           top: 50%;
           left: 50%;
-          margin: -100px 0px 0px -100px;
+          margin: -150px 0px 0px -150px;
+          .inner-circle {
+            position: absolute;
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+            top: 50%;
+            left: 50%;
+            margin: -100px 0px 0px -100px;
+          }
         }
       }
     }
-  }
-  .blockquote {
-    padding-left: 0;
-    margin-top: 50px;
-    blockquote {
-      margin-left: 0;
-      .homepage-quote {
-        color: $light-blue;
+    .blockquote {
+      padding-left: 0;
+      margin-top: 50px;
+      blockquote {
+        margin-left: 0;
+        .quotation-mark {
+          font-size: 80px;
+          font-family: serif;
+          padding: 0;
+          margin-bottom: 0px;
+          margin-top: 20px;
+        }
+        .quote-blue {
+          color: $dark-blue;
+        }
+        .quote-green {
+          color: $dark-green;
+        }
+        .quote-red {
+          color: $dark-red;
+        }
+        .homepage-cite {
+          font-style: initial;
+        }
       }
-      .quotation-mark {
-        color: $dark-blue;
-        font-size: 80px;
-        font-family: serif;
-        padding: 0;
-        margin-bottom: 0px;
-        margin-top: 20px;
-      }
-      .homepage-cite {
-        font-style: initial;
-      }
-    }
-    .more-button a {
-      text-decoration: none;
-      display: inline-block;
-      color: white;
-      background-color: $pink;
-      padding: 5px 10px;
-      border-radius: 6px;
-      position: absolute;
-      top: 300px;
-      right: 100px;
-      &:hover {
-        color: $pink;
-        background-color: white;
-        cursor: pointer;
+      .more-button a {
+        text-decoration: none;
+        display: inline-block;
+        color: white;
+        background-color: $pink;
+        padding: 5px 10px;
+        border-radius: 6px;
+        position: absolute;
+        top: 300px;
+        right: 100px;
+        &:hover {
+          color: $pink;
+          background-color: white;
+          cursor: pointer;
+        }
       }
     }
   }
 }
 
+// ---------- MAIN NEWS ----------
+
 .main-homepage {
   height: 400px;
 }
+
+// ---------- MORE BITS ----------
