@@ -45,7 +45,7 @@
 .container {
   height: 425px;
   background-color: white;
-  border-bottom: 1px solid $dark_grey;
+  /*border-bottom: 1px solid $dark_grey;*/
 
   #blue-jumbotron {
     background-color: $blue;
@@ -188,37 +188,54 @@
   }
 }
 
-  .more-button {
-    font-size: 17px !important;
-    float: right;
-    a {
-      text-decoration: none;
-      display: inline-block;
-      color: white;
-      background-color: $pink;
-      padding: 5px 10px;
-      border-radius: 6px;
-      &:hover {
-        color: $pink;
-        background-color: white;
-        cursor: pointer;
-      }
+// ---------- MORE BUTTON ----------
+
+.more-button {
+  font-size: 17px !important;
+  float: right;
+  a {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    background-color: $pink;
+    padding: 5px 10px;
+    border-radius: 6px;
+    &:hover {
+      color: $pink;
+      background-color: white;
+      cursor: pointer;
     }
   }
+}
+
+// ---------- DIVIDER ----------
+
+.divider {
+  border-top: 1px solid $dark_grey;
+}
 
 // ---------- MAIN NEWS ----------
 
 .main-homepage {
-  .ebook {
-      background: url("/assets/a-little-bit_icons_50x226.png") no-repeat;
-      background-position: 1.25em -13.4em;
-      height: 90px;
-      border-radius: 90px;
+  .new-ebook {
+    padding-left: 0px;
+    .ebook {
+        background: url("/assets/a-little-bit_icons_50x226.png") no-repeat;
+        background-position: 1.35em -13.4em;
+        height: 90px;
+        border-radius: 90px;
+      }
+    .blue-background {
+      background-color: $light-blue; 
+      img {
+        padding-left: 18%;
+      }
     }
-  .blue-background {
-    background-color: $inner-circle-blue; 
-    img {
-      padding-left: 18%;
+    p {
+      font-size: 20px;
+      padding-left: 25px;
+      padding-right: 25px;
+      margin-bottom: 0px;
     }
   }
   h2 {
@@ -226,11 +243,48 @@
     color: $dark_grey;
     margin-top: 5px;
   }
-  p {
-    font-size: 20px;
-    padding-left: 25px;
-    padding-right: 25px;
+  .social-media-feed {
+    padding-right: 0px; 
+    .message-row {
+      border-bottom: 1px solid grey;
+      padding-left: 0px;
+      margin-left: 16px;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    .media-feed-column {
+      padding-left: 0;
+    }
+    .social-media-icon {
+      background-color: $outer-circle-blue;
+      border-radius: 5px;
+      height: 90px;
+      width: 90px;
+      i {
+        margin: 20px;
+      }
+    }
+    .social-media-title {
+      margin-top: 5px;
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 0px;
+      i {
+        font-weight: normal;
+        color: $middle_grey;
+        font-size: 15px;
+      }
+    }
+    .social-media-message {
+      font-size: 15px;
+      margin-top: 0px;
+    }
   }
 }
 
 // ---------- MORE BITS ----------
+
+.homepage-more-bits {
+  height: 100px;
+}
