@@ -13,9 +13,12 @@ html, body {
 }
 
 body {
-  font-family: verdana ;
+  font-family: verdana;
   p {
     font-size: 17px;
+  }
+  h1, h2, h3 {
+    font-family: serif;
   }
 }
 
@@ -64,7 +67,7 @@ footer {
 
 .social-media-icon { 
   color: white;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 @media screen and (max-width: 1023px) {

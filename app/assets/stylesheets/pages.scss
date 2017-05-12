@@ -214,6 +214,14 @@
   border-top: 1px solid $dark_grey;
 }
 
+// ---------- H2 ----------
+
+h2 {
+  font-size: 2em;
+  color: $dark_grey;
+  margin-top: 5px;
+}
+
 // ---------- MAIN NEWS ----------
 
 .main-homepage {
@@ -238,11 +246,6 @@
       margin-bottom: 0px;
     }
   }
-  h2 {
-    font-size: 2em;
-    color: $dark_grey;
-    margin-top: 5px;
-  }
   .social-media-feed {
     padding-right: 0px; 
     .message-row {
@@ -261,6 +264,7 @@
       border-radius: 5px;
       height: 90px;
       width: 90px;
+      font-size: 50px;
       i {
         margin: 20px;
       }
@@ -286,5 +290,31 @@
 // ---------- MORE BITS ----------
 
 .homepage-more-bits {
-  height: 100px;
+  margin-left: 0px;
+  .more-bits-column {
+    padding-left: 0px;
+  }
+  .more-bits-column2 {
+    padding-right: 0px;
+  }
+  img {
+    width: 75%;
+  }
+  .well {
+    background-color: $light_grey;
+    border-radius: 5px;
+    margin-bottom: 17px;
+    h3 {
+      font-size: 26px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    p {
+      font-size: 19px;
+      margin-top: 5px;
+    }
+    .more-button {
+      margin-bottom: 0px;
+    }
+  }
 }
