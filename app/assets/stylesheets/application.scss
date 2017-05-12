@@ -30,11 +30,13 @@ body {
 footer {
   height: 10em; 
   background-color: $dark_grey; 
+  p {
+    float: right;
+  }
   ul {
     margin-top: 0;
     margin-bottom: 0;
-    padding-right: 75px;
-    padding-top: 25px;
+    float: right;
   }
   .social-media-icon {
     list-style: none;
@@ -67,7 +69,7 @@ footer {
 
 .social-media-icon { 
   color: white;
-  font-size: 40px;
+  font-size: 50px;
 }
 
 @media screen and (max-width: 1023px) {
@@ -80,17 +82,19 @@ footer {
   }
 }
 
-@media screen and (max-width: 424px) { 
+@media screen and (max-width: 450px) { 
 
   footer {
     height: 25em;
     ul {
       text-align: center;
+      float: none;
       .social-media-icon {
         display: block;
       }
     }
     .copyright {
+      float: none;
       text-align: center;
       padding-left: 0;
     }
