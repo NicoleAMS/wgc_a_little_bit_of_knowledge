@@ -14,9 +14,9 @@
     width: 300%; /* Number of panes * 100% */
     overflow: hidden; /* This is used solely to clear floats, it does not add functionality. */
         
-/*    -moz-animation:carousel 25s infinite;
+    -moz-animation:carousel 25s infinite;
     -webkit-animation:carousel 25s infinite;
-    animation:carousel 25s infinite;*/
+    animation:carousel 25s infinite;
     li {
       position: relative;
       float: left;
@@ -229,14 +229,16 @@ h2 {
     padding-left: 0px;
     .ebook {
         background: url("/assets/a-little-bit_icons_50x226.png") no-repeat;
-        background-position: 1.35em -13.4em;
+        background-position: 1.25em -13.4em;
         height: 90px;
         border-radius: 90px;
+        width: 90px;
       }
     .blue-background {
       background-color: $light-blue; 
       img {
-        padding-left: 18%;
+        display: block;
+        margin: 0 auto;
       }
     }
     p {
@@ -319,13 +321,154 @@ h2 {
   }
 }
 
-// ---------- RESPONSIVE ----------
+// ---------- RESPONSIVE CAROUSEL ----------
 
 @media screen and (max-width: 1100px) {
+  .carousel {
+    z-index: 0;
+  }
+  .container {
+    .jumbotron {
+      z-index: 0;
+      .blockquote {
+        width: 40%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 888px) {
   .container {
     .jumbotron {
       .blockquote {
-        width: 40%;
+        width: 0%;
+      }
+      blockquote {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 611px) {
+  .panes {
+    height: 475px
+  }
+  .container {
+    .jumbotron {
+      .book-image {
+        top: 40%;
+        left: 80px;
+        width: 165px;
+      }
+      .blockquote {
+        .more-button a {
+          top: 300px;
+          right: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .container {
+    .jumbotron {
+      .book-image {
+        left: 40px;
+      }
+      .title
+        h1 {
+          font-size: 36px;
+      }
+    }
+  }
+}
+
+// ---------- RESPONSIVE MAIN ----------
+
+@media screen and (max-width: 769px) {
+  .main-homepage {
+    .new-ebook {
+      padding-left: 16px;
+      h2 {
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-5%, 50%);
+      }
+    }
+    .social-media-feed {
+      padding-right: 16px;
+    }
+  }
+  .homepage-more-bits {
+    .row {
+      padding-left: 16px; 
+      padding-right: 16px;
+    }
+    .more-bits-column {
+      padding-left: 16px;
+    }
+    .more-bits-column2 {
+      .divider {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .main-homepage {
+    .new-ebook h2 {
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(0%, 10%);
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  h2 {
+    font-size: 24px;
+  }
+  .main-homepage {
+    .new-ebook {
+      .ebook {
+        background-size: 60%;
+        background-position: 1em -11.4em;
+        height: 70px;
+        border-radius: 70px;
+        width: 70px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+    .social-media-feed { 
+      .social-media-icon {
+        height: 70px;
+        width: 70px;
+        font-size: 35px;
+      }
+    }
+  }
+  .homepage-more-bits {
+    .more-bits-column2 {
+      padding-right: 16px;
+      img {
+        width: 60%;
+        display: block;
+        margin: auto;
+      }
+    }
+    .well {
+      h3 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 16px;
       }
     }
   }
